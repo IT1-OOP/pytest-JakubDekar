@@ -43,3 +43,8 @@ def test_multiply_parametrized(a, b, expected):
     assert calculator.multiply(a, b) == expected
 
 
+@pytest.mark.parametrize("a, b, expected_exception, expected_message", [(0, 5, ValueError, "Cannot take log of non-positive number!"), (-2, 5, ValueError, "Cannot take log of non-positive number!"), (5, 1, NameError, "Cannot take log with base 1!"), (5, 0, ZeroDivisionError, "Cannot take log with non-positive base!")],)
+def test_log(expected_exception, expected_message, a, b):
+    with pytest.raises(expected_exception) as exc:
+        calculator.log(a, b)
+    assert str(exc.value) == expected_message

@@ -15,3 +15,4 @@ def test_multiply_wrong():
 
 def test_divide():
     assert calculator.divide(15,3)== 5
+
