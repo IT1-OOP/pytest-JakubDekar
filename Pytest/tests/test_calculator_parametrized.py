@@ -71,8 +71,8 @@ def test_solve_quadratic_formula_wrong():
     assert calculator.solve_quadratic_formula(1, -3, 2) == (1.0, 2.0)  
     assert calculator.solve_quadratic_formula(1, -5, 6) == (2.0, 2.0)  
     assert calculator.solve_quadratic_formula(2, -7, 3) == (4.0, 1.5)  
-
-
+ 
+ 
 @pytest.mark.parametrize(
     "a, b, c, expected_exception, expected_message",[(0, 2, 1, SyntaxError, "Cannot solve quadratic formula with a = 0!"),(1, 2, 5, ValueError, "Cannot solve quadratic formula with negative discriminant!"),(1, 5, 3, NameError, "I don\'t like when b = 5!")])
 def test_solve_quadratic_exceptions(a, b, c, expected_exception, expected_message):
